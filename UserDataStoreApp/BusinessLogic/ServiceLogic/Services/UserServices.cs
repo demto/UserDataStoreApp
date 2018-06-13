@@ -61,5 +61,11 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
             }
             return true;
         }
+
+        public List<User> GetAllUsersFromDb(){
+            using(var context = new UserDataContext()){
+                return context.Users.ToList();
+            }
+        }
     }
 }

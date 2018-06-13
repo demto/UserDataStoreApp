@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201806131914157_InitialMigration.Designer.cs">
       <DependentUpon>201806131914157_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806131939371_CorrectedTypoInUserClass.cs" />
+    <Compile Include="Migrations\201806131939371_CorrectedTypoInUserClass.Designer.cs">
+      <DependentUpon>201806131939371_CorrectedTypoInUserClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806131914157_InitialMigration.resx">
       <DependentUpon>201806131914157_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806131939371_CorrectedTypoInUserClass.resx">
+      <DependentUpon>201806131939371_CorrectedTypoInUserClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
