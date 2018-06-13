@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\Domain\User.cs" />
+    <Compile Include="BusinessLogic\ServiceLogic\Services\UserServices.cs" />
     <Compile Include="DataAccess\UserDataContext.cs" />
     <Compile Include="Migrations\201806131914157_InitialMigration.cs" />
     <Compile Include="Migrations\201806131914157_InitialMigration.Designer.cs">
