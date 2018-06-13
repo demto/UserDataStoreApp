@@ -37,7 +37,7 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
 
         public bool DeleteUser(int userId){
             using(var context = new UserDataContext()){
-                if (DoesUserExist(userId, context)){
+                if (!DoesUserExist(userId, context)){
                     return false;
                 }
 
@@ -50,7 +50,7 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
 
         public bool UpdateUserName (int userId, string newName){
             using(var context = new UserDataContext()){
-                if(DoesUserExist(userId, context)){
+                if(!DoesUserExist(userId, context)){
                     return false;
                 }
 
@@ -65,6 +65,12 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
         public List<User> GetAllUsersFromDb(){
             using(var context = new UserDataContext()){
                 return context.Users.ToList();
+            }
+        }
+
+        public User GetUser(string name){
+            using(var context = new UserDataContext()){
+                return context.Users.SingleOrDefault(u => u.UserName == name);
             }
         }
     }
