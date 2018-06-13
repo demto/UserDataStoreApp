@@ -37,12 +37,15 @@ namespace UserDataStoreApp
                         Console.WriteLine("Please give me the name of the user: ");
                         string userName = Console.ReadLine();
                         var user2update = userServices.GetUser(userName);
-                        Console.WriteLine(userName == null ? "Sorry, user does not exist in db" : "What would you like to change the name to: ");
-                        var newName = Console.ReadLine();
-                        if (userServices.UpdateUserName(user2update.UserId, newName))
-                        {
-                            Console.WriteLine("User's name is succesfully updated.");
-                        };
+                        Console.WriteLine(user2update == null ? "Sorry, user does not exist in db" : "What would you like to change the name to: ");
+                        if(user2update != null){
+                            var newName = Console.ReadLine();
+
+                            if (userServices.UpdateUserName(user2update.UserId, newName))
+                            {
+                                Console.WriteLine("User's name is succesfully updated.");
+                            };
+                        }
                         Console.WriteLine("Sorry, something went wrong with the update");
                         break;
                     case 3:
