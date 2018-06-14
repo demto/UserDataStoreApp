@@ -53,6 +53,7 @@
     <Compile Include="BusinessLogic\Domain\Product.cs" />
     <Compile Include="BusinessLogic\Domain\User.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\UserServices.cs" />
+    <Compile Include="DataAccess\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="DataAccess\UserDataContext.cs" />
     <Compile Include="DataAccess\Migrations\201806131914157_InitialMigration.cs" />
     <Compile Include="DataAccess\Migrations\201806131914157_InitialMigration.Designer.cs">
