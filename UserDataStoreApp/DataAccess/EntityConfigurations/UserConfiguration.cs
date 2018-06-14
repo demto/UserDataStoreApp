@@ -19,7 +19,7 @@ namespace UserDataStoreApp.DataAccess.EntityConfigurations
             // Properties
 
             Property(p => p.NickName)
-            .HasColumnOrder(2);
+            .HasColumnOrder(1);
 
             Property(p => p.UserId)
             .HasColumnName("UserId");
