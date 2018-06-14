@@ -83,7 +83,15 @@ namespace UserDataStoreApp
                         break;
                     case 4:
                         Console.WriteLine("Please enter the user id for the user to be deleted: ");
-                        int id = int.Parse(Console.ReadLine());
+                        int id = 0;
+
+                        try{
+                            id = int.Parse(Console.ReadLine());
+                        }catch(Exception e){
+                            Console.WriteLine("Sorry, incorrect input: " + e.Message);
+                            break;
+                        }
+
                         if (userServices.DeleteUser(id))
                         {
                             Console.WriteLine("User successfully deleted");
