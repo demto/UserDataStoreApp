@@ -68,6 +68,14 @@
     <Compile Include="Migrations\201806141837598_UpdateUserConfig.Designer.cs">
       <DependentUpon>201806141837598_UpdateUserConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806141856217_AddedProductConfig.cs" />
+    <Compile Include="Migrations\201806141856217_AddedProductConfig.Designer.cs">
+      <DependentUpon>201806141856217_AddedProductConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806141913230_UpdatedOwnerIdDbName.cs" />
+    <Compile Include="Migrations\201806141913230_UpdatedOwnerIdDbName.Designer.cs">
+      <DependentUpon>201806141913230_UpdatedOwnerIdDbName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\201806132048414_tria.cs" />
     <Compile Include="Migrations\201806132048414_tria.Designer.cs">
@@ -103,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806141837598_UpdateUserConfig.resx">
       <DependentUpon>201806141837598_UpdateUserConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141856217_AddedProductConfig.resx">
+      <DependentUpon>201806141856217_AddedProductConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141913230_UpdatedOwnerIdDbName.resx">
+      <DependentUpon>201806141913230_UpdatedOwnerIdDbName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
