@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\Domain\Product.cs" />
     <Compile Include="BusinessLogic\Domain\User.cs" />
+    <Compile Include="BusinessLogic\Dtos\ProductUpdateDto.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\ProductServices.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\UserServices.cs" />
     <Compile Include="Client\AdminScreen.cs" />

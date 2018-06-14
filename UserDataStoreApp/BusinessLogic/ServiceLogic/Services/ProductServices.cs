@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UserDataStoreApp.BusinessLogic.Domain;
+using UserDataStoreApp.BusinessLogic.Dtos;
 using UserDataStoreApp.DataAccess;
 
 namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
@@ -33,20 +34,18 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
             }
         }
 
-        public bool UpdateProduct(Product product){
+        public bool UpdateProduct(string existingProductName, ProductUpdateDto productUpdate){
             using (var context = new UserDataContext())
             {
-
-                if (!context.Products.Contains(product) || product == null)
+                var existingProduct = context.Products.SingleOrDefault(p => p.ProductName == existingProductName);
+                if (productUpdate == null || existingProduct == null)
                 {
                     return false;
                 }
-                var existingProduct = context.Products
-                    .SingleOrDefault(p => p.ProductName == product.ProductName);
 
-                existingProduct.ProductName = product.ProductName;
-                existingProduct.ProductPrice = product.ProductPrice;
-                existingProduct.IsSalesProduct = product.IsSalesProduct;
+                existingProduct.ProductName = productUpdate.ProductName;
+                existingProduct.ProductPrice = productUpdate.ProductPrice;
+                existingProduct.IsSalesProduct = productUpdate.IsSalesProduct;
 
                 context.SaveChanges();
                 return true;
@@ -74,5 +73,6 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
                 return context.Products.ToList();
             }
         }
+
     }
 }
