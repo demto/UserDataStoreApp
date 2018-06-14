@@ -80,6 +80,14 @@
     <Compile Include="Migrations\201806141913230_UpdatedOwnerIdDbName.Designer.cs">
       <DependentUpon>201806141913230_UpdatedOwnerIdDbName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806142114579_NullableOwnerId.cs" />
+    <Compile Include="Migrations\201806142114579_NullableOwnerId.Designer.cs">
+      <DependentUpon>201806142114579_NullableOwnerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806142118296_NullableOwnerId2.cs" />
+    <Compile Include="Migrations\201806142118296_NullableOwnerId2.Designer.cs">
+      <DependentUpon>201806142118296_NullableOwnerId2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\201806132048414_tria.cs" />
     <Compile Include="Migrations\201806132048414_tria.Designer.cs">
@@ -120,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806141913230_UpdatedOwnerIdDbName.resx">
       <DependentUpon>201806141913230_UpdatedOwnerIdDbName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806142114579_NullableOwnerId.resx">
+      <DependentUpon>201806142114579_NullableOwnerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806142118296_NullableOwnerId2.resx">
+      <DependentUpon>201806142118296_NullableOwnerId2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

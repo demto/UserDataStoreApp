@@ -25,9 +25,10 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
         public bool AddNewProduct(Product product){
             using(var context = new UserDataContext()){
 
-                if(context.Products.Contains(product) || product == null){
+                if(DoesProductExist(product.ProductName) || product == null){
                     return false;
                 }
+
                 context.Products.Add(product);
                 context.SaveChanges();
                 return true;

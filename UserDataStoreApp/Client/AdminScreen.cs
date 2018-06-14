@@ -107,10 +107,12 @@ namespace UserDataStoreApp.Client
                         }
                         break;
                     case 5:
-                        foreach (var user in userServices.GetAllUsersFromDb())
+                        foreach (var product in productServices.GetAllProducts())
                         {
-                            Console.WriteLine($"{user.UserId}\n{user.UserName}\n{user.NickName}\n{user.IsAdmin}\n\n");
+                            Console.WriteLine($"{product.ProductId}\n{product.ProductName}\n{product.ProductPrice}\n{product.IsSalesProduct}\n\n");
                         }
+                        Console.WriteLine("Please press any keys to continue");
+                        Console.ReadLine();
                         break;
                     case 6 :
                         double newPrice = -1;
@@ -189,13 +191,16 @@ namespace UserDataStoreApp.Client
                             ProductName = newProductName,
                             ProductPrice = newPrice,
                             IsSalesProduct = isSaleProduct,
+                            OwnerId = null,
                         };
 
                         if(productServices.AddNewProduct(newProduct)){
                             Console.WriteLine("Product successfully added.");
+                            Console.ReadLine();
                             break;
                         }
                         Console.WriteLine("Could not add product");
+                        Console.ReadLine();
                         break;
                     case 8:
                         Console.WriteLine("Please enter the id of the product to be deleted: ");

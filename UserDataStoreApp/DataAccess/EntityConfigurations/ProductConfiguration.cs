@@ -34,7 +34,7 @@ namespace UserDataStoreApp.DataAccess.EntityConfigurations
 
             // Relationship
 
-            HasRequired(p => p.Owner)
+            HasOptional(p => p.Owner)
             .WithMany()
             .HasForeignKey(p => p.OwnerId)
             .WillCascadeOnDelete(false);
