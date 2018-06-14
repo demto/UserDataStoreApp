@@ -53,6 +53,8 @@
     <Compile Include="BusinessLogic\Domain\Product.cs" />
     <Compile Include="BusinessLogic\Domain\User.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\UserServices.cs" />
+    <Compile Include="Client\AdminScreen.cs" />
+    <Compile Include="Client\MainScreen.cs" />
     <Compile Include="DataAccess\EntityConfigurations\ProductConfiguration.cs" />
     <Compile Include="DataAccess\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="DataAccess\UserDataContext.cs" />
@@ -93,7 +95,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Client\" />
     <Folder Include="DataAccess\Migrations\" />
   </ItemGroup>
   <ItemGroup>
