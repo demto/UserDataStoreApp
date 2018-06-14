@@ -12,5 +12,6 @@ namespace UserDataStoreApp.BusinessLogic.Domain
         public string UserName { get; set; }
         public string NickName { get; set; }
         public bool IsAdmin { get; set; }
+        public IEnumerable<Product> Products { get; set; }
     }
 }
