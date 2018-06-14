@@ -53,15 +53,19 @@
     <Compile Include="BusinessLogic\Domain\User.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\UserServices.cs" />
     <Compile Include="DataAccess\UserDataContext.cs" />
-    <Compile Include="Migrations\201806131914157_InitialMigration.cs" />
-    <Compile Include="Migrations\201806131914157_InitialMigration.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806131914157_InitialMigration.cs" />
+    <Compile Include="DataAccess\Migrations\201806131914157_InitialMigration.Designer.cs">
       <DependentUpon>201806131914157_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806131939371_CorrectedTypoInUserClass.cs" />
-    <Compile Include="Migrations\201806131939371_CorrectedTypoInUserClass.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806131939371_CorrectedTypoInUserClass.cs" />
+    <Compile Include="DataAccess\Migrations\201806131939371_CorrectedTypoInUserClass.Designer.cs">
       <DependentUpon>201806131939371_CorrectedTypoInUserClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="DataAccess\Migrations\Configuration.cs" />
+    <Compile Include="DataAccess\Migrations\201806132048414_tria.cs" />
+    <Compile Include="DataAccess\Migrations\201806132048414_tria.Designer.cs">
+      <DependentUpon>201806132048414_tria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,11 +77,14 @@
     <Folder Include="Client\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806131914157_InitialMigration.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806131914157_InitialMigration.resx">
       <DependentUpon>201806131914157_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806131939371_CorrectedTypoInUserClass.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806131939371_CorrectedTypoInUserClass.resx">
       <DependentUpon>201806131939371_CorrectedTypoInUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataAccess\Migrations\201806132048414_tria.resx">
+      <DependentUpon>201806132048414_tria.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

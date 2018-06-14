@@ -12,24 +12,31 @@ namespace UserDataStoreApp
     {
         static void Main(string[] args)
         {
+            Run();
+        }
+
+        public static void Run(){
             UserServices userServices = new UserServices();
             int userSelection = 0;
 
-            while(userSelection != 5){
-                Console.WriteLine("Please select from the options below: " +
-                                    "1. View Users in Db\n2. Update a user's name\n3. Add new User\n4. Delete User\n5. Exit");
+            while (userSelection != 5)
+            {
+                Console.WriteLine("\n\nPlease select from the options below: " +
+                                    "\n\n1. View Users in Db\n2. Update a user's name\n3. Add new User\n4. Delete User\n5. Exit");
                 try
                 {
                     userSelection = int.Parse(Console.ReadLine());
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Could not read answer as: " + e + "\nPlease try again");
+                    Console.WriteLine("Could not read answer as: " + e.Message + "\nPlease try again");
                 }
 
-                switch(userSelection){
+                switch (userSelection)
+                {
                     case 1:
-                        foreach(var user in userServices.GetAllUsersFromDb()){
+                        foreach (var user in userServices.GetAllUsersFromDb())
+                        {
                             Console.WriteLine($"{user.UserId}\n{user.UserName}\n{user.NickName}\n{user.IsAdmin}\n\n");
                         }
                         break;
@@ -38,13 +45,15 @@ namespace UserDataStoreApp
                         string userName = Console.ReadLine();
                         var user2update = userServices.GetUser(userName);
                         Console.WriteLine(user2update == null ? "Sorry, user does not exist in db" : "What would you like to change the name to: ");
-                        if(user2update != null){
+                        if (user2update != null)
+                        {
                             var newName = Console.ReadLine();
 
                             if (userServices.UpdateUserName(user2update.UserId, newName))
                             {
                                 Console.WriteLine("User's name is succesfully updated.");
                             };
+                            break;
                         }
                         Console.WriteLine("Sorry, something went wrong with the update");
                         break;
@@ -63,18 +72,24 @@ namespace UserDataStoreApp
                         {
                             newUser.IsAdmin = false;
                         };
-                        if(userServices.SaveUser(newUser)){
+                        if (userServices.SaveUser(newUser))
+                        {
                             Console.WriteLine("New User saved successfully");
-                        }else{
+                        }
+                        else
+                        {
                             Console.WriteLine("Could not save new user");
                         }
                         break;
                     case 4:
                         Console.WriteLine("Please enter the user id for the user to be deleted: ");
                         int id = int.Parse(Console.ReadLine());
-                        if(userServices.DeleteUser(id)){
+                        if (userServices.DeleteUser(id))
+                        {
                             Console.WriteLine("User successfully deleted");
-                        }else{
+                        }
+                        else
+                        {
                             Console.WriteLine("Could not delete user");
                         }
                         break;
