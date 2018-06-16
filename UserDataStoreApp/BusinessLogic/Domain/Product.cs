@@ -12,6 +12,7 @@ namespace UserDataStoreApp.BusinessLogic.Domain
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }
         public bool IsSalesProduct { get; set; }
+        public bool IsPurchased { get; set; }
         public User Owner { get; set; }
         public int? OwnerId { get; set; }
     }

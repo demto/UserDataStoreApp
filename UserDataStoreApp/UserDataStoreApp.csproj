@@ -55,8 +55,9 @@
     <Compile Include="BusinessLogic\Dtos\ProductUpdateDto.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\ProductServices.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\UserServices.cs" />
-    <Compile Include="Client\AdminScreen.cs" />
-    <Compile Include="Client\MainScreen.cs" />
+    <Compile Include="Client\Screens\AdminScreen.cs" />
+    <Compile Include="Client\Screens\MainScreen.cs" />
+    <Compile Include="Client\Screens\ShoppingScreen.cs" />
     <Compile Include="DataAccess\EntityConfigurations\ProductConfiguration.cs" />
     <Compile Include="DataAccess\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="DataAccess\UserDataContext.cs" />
@@ -87,6 +88,10 @@
     <Compile Include="Migrations\201806142118296_NullableOwnerId2.cs" />
     <Compile Include="Migrations\201806142118296_NullableOwnerId2.Designer.cs">
       <DependentUpon>201806142118296_NullableOwnerId2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806161924165_IsPurchasedAddedToProduct.cs" />
+    <Compile Include="Migrations\201806161924165_IsPurchasedAddedToProduct.Designer.cs">
+      <DependentUpon>201806161924165_IsPurchasedAddedToProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\201806132048414_tria.cs" />
@@ -134,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806142118296_NullableOwnerId2.resx">
       <DependentUpon>201806142118296_NullableOwnerId2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806161924165_IsPurchasedAddedToProduct.resx">
+      <DependentUpon>201806161924165_IsPurchasedAddedToProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

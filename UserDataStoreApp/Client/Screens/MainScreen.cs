@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UserDataStoreApp.BusinessLogic.ServiceLogic.Services;
+using UserDataStoreApp.Client.Screens;
 
 namespace UserDataStoreApp.Client
 {
@@ -49,9 +50,10 @@ namespace UserDataStoreApp.Client
                         string userName = Console.ReadLine();
                         if(userServices.GetUser(userName) == null){
                             Console.WriteLine("Sorry, you need to be added to the shop by an admin.");
+                            Console.ReadLine();
                             break;
                         }else{
-                             // Shopscreen.RunShopScreen();
+                             ShoppingScreen.RunShoppingScreen();
                         }
                         break;
                     default:
