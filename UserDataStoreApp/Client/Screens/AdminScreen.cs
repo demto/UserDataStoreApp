@@ -11,7 +11,7 @@ namespace UserDataStoreApp.Client
 {
     public static class AdminScreen
     {
-        public static void RunAdminScreen()
+        public static void RunAdminScreen(string currentUserName)
         {
             UserServices userServices = new UserServices();
             ProductServices productServices = new ProductServices();
