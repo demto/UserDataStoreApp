@@ -40,6 +40,7 @@ namespace UserDataStoreApp.Client
                         foreach (var user in userServices.GetAllUsersFromDb())
                         {
                             Console.WriteLine($"{user.UserId}\n{user.UserName}\n{user.NickName}\n{user.IsAdmin}\n\n");
+                            Console.ReadLine();
                         }
                         break;
                     case 2:

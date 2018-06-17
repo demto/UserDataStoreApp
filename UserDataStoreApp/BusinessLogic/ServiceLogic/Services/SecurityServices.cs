@@ -15,11 +15,11 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
         public bool IsAdminUser(string userName){
             var currentUser = userSercices.GetUser(userName);
 
-            if(currentUser == null){
-                throw new ArgumentNullException("Sorry, no user with this name exists");
+            if (currentUser != null)
+            {
+                return currentUser.IsAdmin;
             }
-
-            return currentUser.IsAdmin;
+            return false;
         }
     }
 }

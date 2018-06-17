@@ -52,6 +52,11 @@ namespace UserDataStoreApp.Client
                         continue;
                     case 2:
                             Console.Clear();
+                            if(!viewModel.IsAdmin){
+                            Console.WriteLine("Sorry this section is for admmins only!");
+                            Console.ReadLine();
+                            continue;
+                        }
                             AdminScreen.RunAdminScreen(viewModel.CurrentUserName);
                         continue;
                     case 3:
