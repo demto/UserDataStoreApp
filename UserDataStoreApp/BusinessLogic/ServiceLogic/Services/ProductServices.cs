@@ -22,7 +22,8 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
             }
         }
 
-        public bool AddNewProduct(Product product){
+        public bool AddNewProduct(Product product)
+{
             using(var context = new UserDataContext()){
 
                 if(DoesProductExist(product.ProductName) || product == null){
@@ -72,6 +73,25 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
         public List<Product> GetAllProducts(){
             using(var context = new UserDataContext()){
                 return context.Products.ToList();
+            }
+        }
+
+        public Product GetProduct(string name){
+            using (var context = new UserDataContext()){
+                var product = context.Products.SingleOrDefault(p => p.ProductName == name);
+                if(product != null){
+                    return product;
+                }
+                return null;
+            }
+        }
+
+        public void PurchaseProduct(int userId, int productId){
+            using(var context = new UserDataContext()){
+                var product = context.Products.Find(productId);
+                product.OwnerId = userId;
+                product.IsPurchased = true;
+                context.SaveChanges();
             }
         }
 

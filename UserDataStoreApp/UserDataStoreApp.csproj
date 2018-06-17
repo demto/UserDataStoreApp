@@ -54,6 +54,7 @@
     <Compile Include="BusinessLogic\Domain\User.cs" />
     <Compile Include="BusinessLogic\Dtos\ProductUpdateDto.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\ProductServices.cs" />
+    <Compile Include="BusinessLogic\ServiceLogic\Services\ShoppingServices.cs" />
     <Compile Include="BusinessLogic\ServiceLogic\Services\UserServices.cs" />
     <Compile Include="Client\Screens\AdminScreen.cs" />
     <Compile Include="Client\Screens\MainScreen.cs" />
@@ -92,6 +93,14 @@
     <Compile Include="Migrations\201806161924165_IsPurchasedAddedToProduct.cs" />
     <Compile Include="Migrations\201806161924165_IsPurchasedAddedToProduct.Designer.cs">
       <DependentUpon>201806161924165_IsPurchasedAddedToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806161952140_Updates.cs" />
+    <Compile Include="Migrations\201806161952140_Updates.Designer.cs">
+      <DependentUpon>201806161952140_Updates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806162049009_LetsHaveALook.cs" />
+    <Compile Include="Migrations\201806162049009_LetsHaveALook.Designer.cs">
+      <DependentUpon>201806162049009_LetsHaveALook.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\201806132048414_tria.cs" />
@@ -142,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806161924165_IsPurchasedAddedToProduct.resx">
       <DependentUpon>201806161924165_IsPurchasedAddedToProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806161952140_Updates.resx">
+      <DependentUpon>201806161952140_Updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806162049009_LetsHaveALook.resx">
+      <DependentUpon>201806162049009_LetsHaveALook.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

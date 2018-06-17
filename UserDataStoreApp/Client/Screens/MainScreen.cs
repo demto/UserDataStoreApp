@@ -44,21 +44,22 @@ namespace UserDataStoreApp.Client
                             Console.Clear();
                             AdminScreen.RunAdminScreen();
                         }
-                        break;
+                        continue;
                     case 2:
                         Console.WriteLine("Please enter your name: ");
                         string userName = Console.ReadLine();
-                        if(userServices.GetUser(userName) == null){
+                        var currentUser = userServices.GetUser(userName);
+                        if (currentUser == null){
                             Console.WriteLine("Sorry, you need to be added to the shop by an admin.");
                             Console.ReadLine();
-                            break;
+                            continue;
                         }else{
-                             ShoppingScreen.RunShoppingScreen();
+                             ShoppingScreen.RunShoppingScreen(currentUser);
                         }
-                        break;
+                        continue;
                     default:
                         Console.WriteLine("Sorry, invalid selection.");
-                        break;
+                        continue;
                 }
             }
 
