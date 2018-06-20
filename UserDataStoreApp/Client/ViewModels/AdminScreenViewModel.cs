@@ -41,7 +41,7 @@ namespace UserDataStoreApp.Client.ViewModels
         }
 
         public bool UpdateUserName(int uId, string newName){
-            if(string.IsNullOrWhiteSpace(newName){
+            if(string.IsNullOrWhiteSpace(newName)){
                 return false;
             }
             userServices.UpdateUserName(uId, newName);
