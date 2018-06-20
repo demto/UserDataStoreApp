@@ -15,8 +15,6 @@ namespace UserDataStoreApp.Client
         public static void RunAdminScreen(string currentUserName)
         {
             AdminScreenViewModel viewModel = new AdminScreenViewModel();
-            UserServices userServices = new UserServices();
-            ProductServices productServices = new ProductServices();
 
             int userSelection = 0;
 

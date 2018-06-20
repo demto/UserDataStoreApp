@@ -62,6 +62,7 @@
     <Compile Include="Client\Screens\ShoppingScreen.cs" />
     <Compile Include="Client\ViewModels\AdminScreenViewModel.cs" />
     <Compile Include="Client\ViewModels\MainScreenViewModel.cs" />
+    <Compile Include="Client\ViewModels\ShoppingScreenViewModel.cs" />
     <Compile Include="DataAccess\EntityConfigurations\ProductConfiguration.cs" />
     <Compile Include="DataAccess\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="DataAccess\UserDataContext.cs" />

@@ -16,7 +16,6 @@ namespace UserDataStoreApp.Client.ViewModels
         ProductServices productServices = new ProductServices();
 
 #region Properties
-        public User MyProperty { get; set; }
 
         public IList<User> AllUsers{
             get{

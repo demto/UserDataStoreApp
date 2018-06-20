@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UserDataStoreApp.BusinessLogic.Domain;
 using UserDataStoreApp.BusinessLogic.ServiceLogic.Services;
+using UserDataStoreApp.Client.ViewModels;
 
 namespace UserDataStoreApp.Client.Screens
 {
@@ -12,6 +13,7 @@ namespace UserDataStoreApp.Client.Screens
     {
         public static void RunShoppingScreen(User user){
             int userSelection = 0;
+            var viewModel = new ShoppingScreenViewModel();
             Dictionary<int, Product> indexedProducts = new Dictionary<int, Product>();
             ProductServices productServices = new ProductServices();
             ShoppingServices shoppingServices = new ShoppingServices();
@@ -23,7 +25,7 @@ namespace UserDataStoreApp.Client.Screens
 
                 indexedProducts.Clear();
 
-                var allProducts = productServices.GetAllProducts();
+                var allProducts = viewModel.AllProdcuts;
                 for(int productCount = 0; productCount < allProducts.Count; productCount++){
                     var currenProduct = allProducts[productCount];
                     indexedProducts.Add(productCount, currenProduct);
@@ -77,7 +79,7 @@ namespace UserDataStoreApp.Client.Screens
                     continue;
                 }
 
-                if(shoppingServices.PurchaseProduct(user, selectedProduct)){
+                if(viewModel.PurchaseProduct(user, selectedProduct)){
                     Console.WriteLine("Purchase successful");
                     Console.ReadLine();
                     continue;
