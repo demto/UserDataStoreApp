@@ -62,6 +62,7 @@ namespace UserDataStoreApp.Client
                     case 3:
                             if(viewModel.CurrentUserName == null){
                             Console.WriteLine("Please Change to an existing User First!");
+                            Console.ReadLine();
                             continue;
                         }
                              ShoppingScreen.RunShoppingScreen(viewModel.CurrentUser);
@@ -70,6 +71,7 @@ namespace UserDataStoreApp.Client
                         break;
                     default:
                         Console.WriteLine("Sorry, invalid selection.");
+                        Console.ReadLine();
                         continue;
                 }
             }

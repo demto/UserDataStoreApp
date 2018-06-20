@@ -13,12 +13,13 @@ namespace UserDataStoreApp.Client.Screens
     {
         public static void RunShoppingScreen(User user){
             int userSelection = 0;
+            bool wantsToExit = false;
             var viewModel = new ShoppingScreenViewModel();
             Dictionary<int, Product> indexedProducts = new Dictionary<int, Product>();
             ProductServices productServices = new ProductServices();
             ShoppingServices shoppingServices = new ShoppingServices();
 
-            while(userSelection != 3){
+            while(!wantsToExit){
 
                 Console.Clear();
                 Console.WriteLine("Welcome {0} to the rare and custom items's shop!\nBelow is a list of all products currently available.", user.UserName);
@@ -51,12 +52,17 @@ namespace UserDataStoreApp.Client.Screens
                     continue;
                 }
 
-                Console.WriteLine("\n\nPlease select from the above list which item you would like to buy or press 3 to go back a page: ");
+                Console.WriteLine("\n\nPlease select from the above list which item you would like to buy or press e and enter to go back a page: ");
 
                 Product selectedProduct;
 
                 try{
-                    userSelection = int.Parse(Console.ReadLine());
+                    var input = Console.ReadLine();
+                    if(input[0] == 'e'){
+                        wantsToExit = true;
+                        break;
+                    }
+                    userSelection = int.Parse(input);
                     selectedProduct = indexedProducts[userSelection];
                 }
                 catch(Exception e){
