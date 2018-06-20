@@ -35,7 +35,7 @@ namespace UserDataStoreApp.Client.ViewModels
         }
         #endregion
 
-#region methods
+#region User Methods
 
         public void AssignUserName(string userName){
             this.currentUserName = userName;

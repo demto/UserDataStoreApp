@@ -21,5 +21,7 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
             }
             return false;
         }
+
+        // TODO add login logic to security class
     }
 }

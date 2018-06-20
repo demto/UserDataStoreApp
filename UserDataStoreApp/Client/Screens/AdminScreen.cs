@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UserDataStoreApp.BusinessLogic.Domain;
 using UserDataStoreApp.BusinessLogic.Dtos;
 using UserDataStoreApp.BusinessLogic.ServiceLogic.Services;
+using UserDataStoreApp.Client.ViewModels;
 
 namespace UserDataStoreApp.Client
 {
@@ -13,6 +14,7 @@ namespace UserDataStoreApp.Client
     {
         public static void RunAdminScreen(string currentUserName)
         {
+            AdminScreenViewModel viewModel = new AdminScreenViewModel();
             UserServices userServices = new UserServices();
             ProductServices productServices = new ProductServices();
 
@@ -37,7 +39,7 @@ namespace UserDataStoreApp.Client
                 switch (userSelection)
                 {
                     case 1:
-                        foreach (var user in userServices.GetAllUsersFromDb())
+                        foreach (var user in viewModel.AllUsers)
                         {
                             Console.WriteLine($"{user.UserId}\n{user.UserName}\n{user.NickName}\n{user.IsAdmin}\n\n");
                             Console.ReadLine();
@@ -46,19 +48,20 @@ namespace UserDataStoreApp.Client
                     case 2:
                         Console.WriteLine("Please give me the name of the user: ");
                         string userName = Console.ReadLine();
-                        var user2update = userServices.GetUser(userName);
+                        var user2update = viewModel.GetUser(userName);
                         Console.WriteLine(user2update == null ? "Sorry, user does not exist in db" : "What would you like to change the name to: ");
                         if (user2update != null)
                         {
                             var newProdName = Console.ReadLine();
 
-                            if (userServices.UpdateUserName(user2update.UserId, newProdName))
+                            if (viewModel.UpdateUserName(user2update.UserId, newProdName))
                             {
                                 Console.WriteLine("User's name is succesfully updated.");
                             };
                             break;
                         }
                         Console.WriteLine("Sorry, something went wrong with the update");
+                        Console.ReadLine();
                         break;
                     case 3:
                         var newUser = new User();
@@ -75,7 +78,7 @@ namespace UserDataStoreApp.Client
                         {
                             newUser.IsAdmin = false;
                         };
-                        if (userServices.SaveUser(newUser))
+                        if (viewModel.SaveUser(newUser))
                         {
                             Console.WriteLine("New User saved successfully");
                         }
@@ -98,17 +101,19 @@ namespace UserDataStoreApp.Client
                             break;
                         }
 
-                        if (userServices.DeleteUser(id))
+                        if (viewModel.DeleteUser(id))
                         {
                             Console.WriteLine("User successfully deleted");
+                            Console.ReadLine();
                         }
                         else
                         {
                             Console.WriteLine("Could not delete user");
+                            Console.ReadLine();
                         }
                         break;
                     case 5:
-                        foreach (var product in productServices.GetAllProducts())
+                        foreach (var product in viewModel.AllProducts)
                         {
                             Console.WriteLine($"{product.ProductId}\n{product.ProductName}\n{product.ProductPrice}\n{product.IsSalesProduct}\n\n");
                         }
@@ -134,6 +139,7 @@ namespace UserDataStoreApp.Client
 
                         if(newPrice < 0){
                             Console.WriteLine("Sorry price has to be 0 or greater");
+                            Console.ReadLine();
                             break;
                         }
 
@@ -144,19 +150,13 @@ namespace UserDataStoreApp.Client
                             isSaleProduct = true;
                         }
 
-                        var productUpdates = new ProductUpdateDto {
-                            ProductName = newProductName,
-                            ProductPrice = newPrice,
-                            IsSalesProduct = isSaleProduct
-                        };
-
-                        if (productServices.UpdateProduct(productName, productUpdates))
-                        {
+                        if(viewModel.TryUpdateProduct(productName, newProductName, newPrice, isSaleProduct)){
                             Console.WriteLine("Product is succesfully updated.");
                             break;
                         }
 
                         Console.WriteLine("Sorry, something went wrong with the update");
+                        Console.ReadLine();
                         break;
 
                     case 7:
@@ -195,7 +195,7 @@ namespace UserDataStoreApp.Client
                             OwnerId = null,
                         };
 
-                        if(productServices.AddNewProduct(newProduct)){
+                        if(viewModel.AddNewProduct(newProduct)){
                             Console.WriteLine("Product successfully added.");
                             Console.ReadLine();
                             break;
@@ -214,7 +214,7 @@ namespace UserDataStoreApp.Client
                             Console.WriteLine("Sorry could not read input as : " + e.Message  + "Please press any key");
                             break;
                         }
-                        if(productServices.DeleteProduct(productId)){
+                        if(viewModel.DeleteProduct(productId)){
                             Console.WriteLine("Product successfully deleted. Please a key to continue.");
                             Console.ReadLine();
                             break;

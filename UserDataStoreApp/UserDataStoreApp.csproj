@@ -60,6 +60,7 @@
     <Compile Include="Client\Screens\AdminScreen.cs" />
     <Compile Include="Client\Screens\MainScreen.cs" />
     <Compile Include="Client\Screens\ShoppingScreen.cs" />
+    <Compile Include="Client\ViewModels\AdminScreenViewModel.cs" />
     <Compile Include="Client\ViewModels\MainScreenViewModel.cs" />
     <Compile Include="DataAccess\EntityConfigurations\ProductConfiguration.cs" />
     <Compile Include="DataAccess\EntityConfigurations\UserConfiguration.cs" />
