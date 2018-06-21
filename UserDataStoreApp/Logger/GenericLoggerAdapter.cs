@@ -18,6 +18,7 @@ namespace UserDataStoreApp.Logger
                 context.TraceMessage.Add(
                     new TraceMessage(title, message, severityLevel, DateTime.UtcNow)
                 );
+                context.SaveChanges();
             }
         }
     }

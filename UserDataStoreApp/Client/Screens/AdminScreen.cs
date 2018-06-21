@@ -36,7 +36,7 @@ namespace UserDataStoreApp.Client
                 catch (Exception e)
                 {
                     Console.WriteLine("Could not read answer as: " + e.Message + "\nPlease try again");
-                    Trace.TraceError("Incorrect input format", e.Message, SeverityLevel.Error);
+                    Trace.TraceError("Incorrect input format", e.Message + e.StackTrace, SeverityLevel.Error);
                 }
 
                 switch (userSelection)
@@ -101,7 +101,7 @@ namespace UserDataStoreApp.Client
                         catch (Exception e)
                         {
                             Console.WriteLine("Sorry, incorrect input: " + e.Message);
-                            Trace.TraceError("Incorrect input format", e.Message, SeverityLevel.Error);
+                            Trace.TraceError("Incorrect input format", e.Message + e.StackTrace, SeverityLevel.Error);
                             Console.ReadLine();
                             break;
                         }
@@ -139,7 +139,7 @@ namespace UserDataStoreApp.Client
                             newPrice = double.Parse(Console.ReadLine());
                         }catch(Exception e){
                             Console.WriteLine("Sorry could not read new price");
-                            Trace.TraceError("Incorrect price format", e.Message, SeverityLevel.Error);
+                            Trace.TraceError("Incorrect price format", e.Message + e.StackTrace, SeverityLevel.Error);
                             Console.ReadLine();
                             break;
                         }
@@ -179,7 +179,7 @@ namespace UserDataStoreApp.Client
                         catch (Exception e)
                         {
                             Console.WriteLine("Sorry could not read new price");
-                            Trace.TraceError("Incorrect price format", e.Message, SeverityLevel.Error);
+                            Trace.TraceError("Incorrect price format", e.Message + e.StackTrace, SeverityLevel.Error);
                             Console.ReadLine();
                             break;
                         }
@@ -221,7 +221,7 @@ namespace UserDataStoreApp.Client
                             productId = int.Parse(Console.ReadLine());
                         }catch(Exception e){
                             Console.WriteLine("Sorry could not read input as : " + e.Message  + "Please press any key");
-                            Trace.TraceError("Incorrect Product Id format", e.Message, SeverityLevel.Error);
+                            Trace.TraceError("Incorrect Product Id format", e.Message + e.StackTrace, SeverityLevel.Error);
                             break;
                         }
                         if(viewModel.DeleteProduct(productId)){

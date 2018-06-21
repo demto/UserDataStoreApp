@@ -38,7 +38,7 @@ namespace UserDataStoreApp.Client
                 catch (Exception e)
                 {
                     Console.WriteLine("Sorry, could not understand selection as : " + e.Message);
-                    Trace.TraceError("Incorrect User Selection", e.Message, SeverityLevel.Error);
+                    Trace.TraceError("Incorrect User Selection", e.Message + e.StackTrace, SeverityLevel.Error);
                 }
 
                 Console.Clear();
@@ -52,7 +52,7 @@ namespace UserDataStoreApp.Client
                             viewModel.AssignUserName(currentUserName);
                         }catch(ArgumentNullException e){
                             Console.WriteLine(e.Message);
-                            Trace.TraceError("Could not find user", e.Message, SeverityLevel.Warning);
+                            Trace.TraceError("Could not find user", e.Message + e.StackTrace, SeverityLevel.Warning);
                             Console.ReadLine();
                         }
                         continue;
@@ -66,7 +66,7 @@ namespace UserDataStoreApp.Client
                             AdminScreen.RunAdminScreen(viewModel.CurrentUserName);
                         continue;
                     case 3:
-                            if(viewModel.CurrentUserName == null){
+                            if(viewModel.CurrentUserName == null || viewModel.CurrentUser == null){
                             Console.WriteLine("Please Change to an existing User First!");
                             Console.ReadLine();
                             continue;

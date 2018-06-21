@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,7 +73,7 @@ namespace UserDataStoreApp.BusinessLogic.ServiceLogic.Services
 
         public List<Product> GetAllProducts(){
             using(var context = new UserDataContext()){
-                return context.Products.ToList();
+                return context.Products.Include(p => p.Owner).ToList();
             }
         }
 

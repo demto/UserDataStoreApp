@@ -71,7 +71,7 @@ namespace UserDataStoreApp.Client.Screens
                 }
                 catch(Exception e){
                     Console.WriteLine("Sorry could not read input either as it is an invalid input or the product does not exist: " + e.Message);
-                    Trace.TraceError("Incorrect input format", e.Message, SeverityLevel.Error);
+                    Trace.TraceError("Incorrect input format", e.Message + e.StackTrace, SeverityLevel.Error);
                     continue;
                 }
 
