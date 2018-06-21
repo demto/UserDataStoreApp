@@ -69,61 +69,61 @@
     <Compile Include="DataAccess\EntityConfigurations\UserConfiguration.cs" />
     <Compile Include="DataAccess\UserDataContext.cs" />
     <Compile Include="Logger\GenericLoggerAdapter.cs" />
-    <Compile Include="Migrations\201806131914157_InitialMigration.cs" />
-    <Compile Include="Migrations\201806131914157_InitialMigration.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806131914157_InitialMigration.cs" />
+    <Compile Include="DataAccess\Migrations\201806131914157_InitialMigration.Designer.cs">
       <DependentUpon>201806131914157_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806131939371_CorrectedTypoInUserClass.cs" />
-    <Compile Include="Migrations\201806131939371_CorrectedTypoInUserClass.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806131939371_CorrectedTypoInUserClass.cs" />
+    <Compile Include="DataAccess\Migrations\201806131939371_CorrectedTypoInUserClass.Designer.cs">
       <DependentUpon>201806131939371_CorrectedTypoInUserClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806141837598_UpdateUserConfig.cs" />
-    <Compile Include="Migrations\201806141837598_UpdateUserConfig.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806141837598_UpdateUserConfig.cs" />
+    <Compile Include="DataAccess\Migrations\201806141837598_UpdateUserConfig.Designer.cs">
       <DependentUpon>201806141837598_UpdateUserConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806141856217_AddedProductConfig.cs" />
-    <Compile Include="Migrations\201806141856217_AddedProductConfig.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806141856217_AddedProductConfig.cs" />
+    <Compile Include="DataAccess\Migrations\201806141856217_AddedProductConfig.Designer.cs">
       <DependentUpon>201806141856217_AddedProductConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806141913230_UpdatedOwnerIdDbName.cs" />
-    <Compile Include="Migrations\201806141913230_UpdatedOwnerIdDbName.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806141913230_UpdatedOwnerIdDbName.cs" />
+    <Compile Include="DataAccess\Migrations\201806141913230_UpdatedOwnerIdDbName.Designer.cs">
       <DependentUpon>201806141913230_UpdatedOwnerIdDbName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806142114579_NullableOwnerId.cs" />
-    <Compile Include="Migrations\201806142114579_NullableOwnerId.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806142114579_NullableOwnerId.cs" />
+    <Compile Include="DataAccess\Migrations\201806142114579_NullableOwnerId.Designer.cs">
       <DependentUpon>201806142114579_NullableOwnerId.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806142118296_NullableOwnerId2.cs" />
-    <Compile Include="Migrations\201806142118296_NullableOwnerId2.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806142118296_NullableOwnerId2.cs" />
+    <Compile Include="DataAccess\Migrations\201806142118296_NullableOwnerId2.Designer.cs">
       <DependentUpon>201806142118296_NullableOwnerId2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806161924165_IsPurchasedAddedToProduct.cs" />
-    <Compile Include="Migrations\201806161924165_IsPurchasedAddedToProduct.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806161924165_IsPurchasedAddedToProduct.cs" />
+    <Compile Include="DataAccess\Migrations\201806161924165_IsPurchasedAddedToProduct.Designer.cs">
       <DependentUpon>201806161924165_IsPurchasedAddedToProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806161952140_Updates.cs" />
-    <Compile Include="Migrations\201806161952140_Updates.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806161952140_Updates.cs" />
+    <Compile Include="DataAccess\Migrations\201806161952140_Updates.Designer.cs">
       <DependentUpon>201806161952140_Updates.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806162049009_LetsHaveALook.cs" />
-    <Compile Include="Migrations\201806162049009_LetsHaveALook.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806162049009_LetsHaveALook.cs" />
+    <Compile Include="DataAccess\Migrations\201806162049009_LetsHaveALook.Designer.cs">
       <DependentUpon>201806162049009_LetsHaveALook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806170728596_AnyChanges.cs" />
-    <Compile Include="Migrations\201806170728596_AnyChanges.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806170728596_AnyChanges.cs" />
+    <Compile Include="DataAccess\Migrations\201806170728596_AnyChanges.Designer.cs">
       <DependentUpon>201806170728596_AnyChanges.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806212004224_AddTraceMessageTable.cs" />
-    <Compile Include="Migrations\201806212004224_AddTraceMessageTable.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806212004224_AddTraceMessageTable.cs" />
+    <Compile Include="DataAccess\Migrations\201806212004224_AddTraceMessageTable.Designer.cs">
       <DependentUpon>201806212004224_AddTraceMessageTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\201806132048414_tria.cs" />
-    <Compile Include="Migrations\201806132048414_tria.Designer.cs">
+    <Compile Include="DataAccess\Migrations\Configuration.cs" />
+    <Compile Include="DataAccess\Migrations\201806132048414_tria.cs" />
+    <Compile Include="DataAccess\Migrations\201806132048414_tria.Designer.cs">
       <DependentUpon>201806132048414_tria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806141830259_AddedProductClassAndUserConfiguration.cs" />
-    <Compile Include="Migrations\201806141830259_AddedProductClassAndUserConfiguration.Designer.cs">
+    <Compile Include="DataAccess\Migrations\201806141830259_AddedProductClassAndUserConfiguration.cs" />
+    <Compile Include="DataAccess\Migrations\201806141830259_AddedProductClassAndUserConfiguration.Designer.cs">
       <DependentUpon>201806141830259_AddedProductClassAndUserConfiguration.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -135,50 +135,48 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DataAccess\Migrations\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806131914157_InitialMigration.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806131914157_InitialMigration.resx">
       <DependentUpon>201806131914157_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806131939371_CorrectedTypoInUserClass.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806131939371_CorrectedTypoInUserClass.resx">
       <DependentUpon>201806131939371_CorrectedTypoInUserClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806132048414_tria.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806132048414_tria.resx">
       <DependentUpon>201806132048414_tria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141830259_AddedProductClassAndUserConfiguration.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806141830259_AddedProductClassAndUserConfiguration.resx">
       <DependentUpon>201806141830259_AddedProductClassAndUserConfiguration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141837598_UpdateUserConfig.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806141837598_UpdateUserConfig.resx">
       <DependentUpon>201806141837598_UpdateUserConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141856217_AddedProductConfig.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806141856217_AddedProductConfig.resx">
       <DependentUpon>201806141856217_AddedProductConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806141913230_UpdatedOwnerIdDbName.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806141913230_UpdatedOwnerIdDbName.resx">
       <DependentUpon>201806141913230_UpdatedOwnerIdDbName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806142114579_NullableOwnerId.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806142114579_NullableOwnerId.resx">
       <DependentUpon>201806142114579_NullableOwnerId.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806142118296_NullableOwnerId2.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806142118296_NullableOwnerId2.resx">
       <DependentUpon>201806142118296_NullableOwnerId2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806161924165_IsPurchasedAddedToProduct.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806161924165_IsPurchasedAddedToProduct.resx">
       <DependentUpon>201806161924165_IsPurchasedAddedToProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806161952140_Updates.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806161952140_Updates.resx">
       <DependentUpon>201806161952140_Updates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806162049009_LetsHaveALook.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806162049009_LetsHaveALook.resx">
       <DependentUpon>201806162049009_LetsHaveALook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806170728596_AnyChanges.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806170728596_AnyChanges.resx">
       <DependentUpon>201806170728596_AnyChanges.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806212004224_AddTraceMessageTable.resx">
+    <EmbeddedResource Include="DataAccess\Migrations\201806212004224_AddTraceMessageTable.resx">
       <DependentUpon>201806212004224_AddTraceMessageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
