@@ -7,6 +7,9 @@ using UserDataStoreApp.BusinessLogic.Domain;
 using UserDataStoreApp.BusinessLogic.Dtos;
 using UserDataStoreApp.BusinessLogic.ServiceLogic.Services;
 using UserDataStoreApp.Client.ViewModels;
+using UserDataStoreApp.Logger;
+using UserDataStoreApp.Shared.Enums;
+using UserDataStoreApp.Shared.Services;
 
 namespace UserDataStoreApp.Client
 {
@@ -15,6 +18,7 @@ namespace UserDataStoreApp.Client
         public static void RunAdminScreen(string currentUserName)
         {
             AdminScreenViewModel viewModel = new AdminScreenViewModel();
+            ILogger Trace = new GenericLoggerAdapter();
 
             int userSelection = 0;
 
@@ -32,6 +36,7 @@ namespace UserDataStoreApp.Client
                 catch (Exception e)
                 {
                     Console.WriteLine("Could not read answer as: " + e.Message + "\nPlease try again");
+                    Trace.TraceError("Incorrect input format", e.Message, SeverityLevel.Error);
                 }
 
                 switch (userSelection)
@@ -40,8 +45,8 @@ namespace UserDataStoreApp.Client
                         foreach (var user in viewModel.AllUsers)
                         {
                             Console.WriteLine($"{user.UserId}\n{user.UserName}\n{user.NickName}\n{user.IsAdmin}\n\n");
-                            Console.ReadLine();
                         }
+                        Console.ReadLine();
                         break;
                     case 2:
                         Console.WriteLine("Please give me the name of the user: ");
@@ -96,6 +101,8 @@ namespace UserDataStoreApp.Client
                         catch (Exception e)
                         {
                             Console.WriteLine("Sorry, incorrect input: " + e.Message);
+                            Trace.TraceError("Incorrect input format", e.Message, SeverityLevel.Error);
+                            Console.ReadLine();
                             break;
                         }
 
@@ -132,6 +139,8 @@ namespace UserDataStoreApp.Client
                             newPrice = double.Parse(Console.ReadLine());
                         }catch(Exception e){
                             Console.WriteLine("Sorry could not read new price");
+                            Trace.TraceError("Incorrect price format", e.Message, SeverityLevel.Error);
+                            Console.ReadLine();
                             break;
                         }
 
@@ -170,6 +179,8 @@ namespace UserDataStoreApp.Client
                         catch (Exception e)
                         {
                             Console.WriteLine("Sorry could not read new price");
+                            Trace.TraceError("Incorrect price format", e.Message, SeverityLevel.Error);
+                            Console.ReadLine();
                             break;
                         }
 
@@ -210,6 +221,7 @@ namespace UserDataStoreApp.Client
                             productId = int.Parse(Console.ReadLine());
                         }catch(Exception e){
                             Console.WriteLine("Sorry could not read input as : " + e.Message  + "Please press any key");
+                            Trace.TraceError("Incorrect Product Id format", e.Message, SeverityLevel.Error);
                             break;
                         }
                         if(viewModel.DeleteProduct(productId)){

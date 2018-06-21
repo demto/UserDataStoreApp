@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using UserDataStoreApp.BusinessLogic.ServiceLogic.Services;
 using UserDataStoreApp.Client.Screens;
 using UserDataStoreApp.Client.ViewModels;
+using UserDataStoreApp.Logger;
+using UserDataStoreApp.Shared.Enums;
+using UserDataStoreApp.Shared.Services;
 
 namespace UserDataStoreApp.Client
 {
@@ -15,6 +18,7 @@ namespace UserDataStoreApp.Client
         public static void RunMainScreen()
         {
             var viewModel = new MainScreenViewModel();
+            ILogger Trace = new GenericLoggerAdapter();
 
             var userServices = new UserServices();
             int userSelection = 0;
@@ -34,6 +38,7 @@ namespace UserDataStoreApp.Client
                 catch (Exception e)
                 {
                     Console.WriteLine("Sorry, could not understand selection as : " + e.Message);
+                    Trace.TraceError("Incorrect User Selection", e.Message, SeverityLevel.Error);
                 }
 
                 Console.Clear();
@@ -47,6 +52,7 @@ namespace UserDataStoreApp.Client
                             viewModel.AssignUserName(currentUserName);
                         }catch(ArgumentNullException e){
                             Console.WriteLine(e.Message);
+                            Trace.TraceError("Could not find user", e.Message, SeverityLevel.Warning);
                             Console.ReadLine();
                         }
                         continue;

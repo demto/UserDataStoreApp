@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 using UserDataStoreApp.BusinessLogic.Domain;
 using UserDataStoreApp.BusinessLogic.ServiceLogic.Services;
 using UserDataStoreApp.Client.ViewModels;
+using UserDataStoreApp.Logger;
+using UserDataStoreApp.Shared.Enums;
+using UserDataStoreApp.Shared.Services;
 
 namespace UserDataStoreApp.Client.Screens
 {
     public class ShoppingScreen
     {
         public static void RunShoppingScreen(User user){
+            ILogger Trace = new GenericLoggerAdapter();
             int userSelection = 0;
             bool wantsToExit = false;
             var viewModel = new ShoppingScreenViewModel();
@@ -46,7 +50,7 @@ namespace UserDataStoreApp.Client.Screens
                 {
                     if (indexedProduct.Value.IsPurchased)
                     {
-                        Console.WriteLine($"{indexedProduct.Key} - {indexedProduct.Value.ProductName}");
+                        Console.WriteLine($"{indexedProduct.Key} - {indexedProduct.Value.ProductName} - {indexedProduct.Value.Owner.UserName}");
                     }
 
                     continue;
@@ -67,6 +71,7 @@ namespace UserDataStoreApp.Client.Screens
                 }
                 catch(Exception e){
                     Console.WriteLine("Sorry could not read input either as it is an invalid input or the product does not exist: " + e.Message);
+                    Trace.TraceError("Incorrect input format", e.Message, SeverityLevel.Error);
                     continue;
                 }
 

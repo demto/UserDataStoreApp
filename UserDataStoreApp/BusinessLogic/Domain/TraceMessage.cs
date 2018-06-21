@@ -14,5 +14,12 @@ namespace UserDataStoreApp.BusinessLogic.Domain
         public string MessageText { get; set; }
         public SeverityLevel Severity { get; set; }
         public DateTime UtcDateTime { get; set; }
+
+        public TraceMessage(string title, string message, SeverityLevel severity, DateTime dateTime){
+            this.Title = title;
+            this.MessageText = message;
+            this.Severity = severity;
+            this.UtcDateTime = dateTime; 
+        }
     }
 }

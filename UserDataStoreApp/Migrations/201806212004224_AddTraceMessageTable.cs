@@ -7,10 +7,23 @@ namespace UserDataStoreApp.Migrations
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.TraceMessages",
+                c => new
+                    {
+                        TraceMessageId = c.Int(nullable: false, identity: true),
+                        Title = c.String(),
+                        MessageText = c.String(),
+                        Severity = c.Int(nullable: false),
+                        UtcDateTime = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.TraceMessageId);
+            
         }
         
         public override void Down()
         {
+            DropTable("dbo.TraceMessages");
         }
     }
 }
